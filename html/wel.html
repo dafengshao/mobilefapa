@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+
+	<head>
+
+		<head>
+			<meta charset="utf-8">
+			<title>落霞小说网 - 严歌苓 芳华小说在线阅读</title>
+			<meta name="Description" content="落霞小说网（LuoXia.com），一个简约而不简单的小说在线阅读网站，通过领先的设计，友好地兼容电脑、平板、手机等各类终端，方便您随时随地享受美妙阅读时光。">
+			<!-- disable iPhone inital scale -->
+			<meta name="viewport" content="width=device-width,initial-scale=1.0">
+			<meta name="applicable-device" content="pc,mobile">
+			<meta name="renderer" content="webkit">
+			<meta http-equiv="Cache-Control" content="no-transform">
+			<link rel="shortcut icon" href="http://www.luoxia.com/favicon.ico">
+
+			<!-- main css -->
+			<link rel="stylesheet" href="http://www.luoxia.com/theme/style.css" type="text/css">
+			<!-- media queries css -->
+			<link rel="stylesheet" href="http://www.luoxia.com/theme/queries.css" type="text/css">
+
+			<!-- html5.js for IE less than 9 -->
+			<!--[if lt IE 9]>
+	<script src="http://7xky9t.com1.z0.glb.clouddn.com/html5.js"></script>
+<![endif]-->
+
+			<!-- css3-mediaqueries.js for IE less than 9 -->
+			<!--[if lt IE 9]>
+	<script src="http://7xky9t.com1.z0.glb.clouddn.com/css3-mediaqueries.js"></script>
+<![endif]-->
+			<!-- Include jQuery -->
+			<script src="http://7xky9t.com1.z0.glb.clouddn.com/jquery1.42.min.js"></script>
+			<!-- Include the Sidr JS -->
+			<script src="http://7xky9t.com1.z0.glb.clouddn.com/jquery.sidr.min.js"></script>
+			<script src="http://7xky9t.com1.z0.glb.clouddn.com/script.js"></script>
+			<script src="http://7xky9t.com1.z0.glb.clouddn.com/TouchSlide.1.1.js"></script>
+			<script src="http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=421021"></script>
+			<link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_style0_16.css?v=6aba13f0.css">
+			<link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_popup.css?v=240f357d.css">
+		</head>
+
+		<body id="bodyid" class="bgw" style="display: ;">
+			
+		</body>
+
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+				
+			});
+
+			function AutoScroll(obj) {
+				$(obj).find("ul:first").animate({
+					marginTop: "-1.5em"
+				}, 500, function() {
+					$(this).css({
+						marginTop: "0em"
+					}).find("li:first").appendTo(this);
+				});
+			}
+			TouchSlide({
+				slideCell: "#slideBox",
+				titCell: ".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+				mainCell: ".bd ul",
+				effect: "leftLoop",
+				autoPage: true, //自动分页
+				autoPlay: true //自动播放
+			});
+
+			window._bd_share_config = {
+				"common": {
+					"bdSnsKey": {},
+					"bdText": "",
+					"bdMini": "2",
+					"bdMiniList": false,
+					"bdPic": "",
+					"bdStyle": "0",
+					"bdSize": "16"
+				},
+				"share": {}
+			};
+			with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+
+			function b() {
+				h = $(window).height();
+				t = $(document).scrollTop();
+				if(t > h) {
+					$('#gotop').show();
+				} else {
+					$('#gotop').hide();
+				}
+			}
+			$(document).ready(function(e) {
+				b();
+				$('#gotop').click(function() {
+					//$(document).scrollTop(0);	
+					$('html,body').animate({
+						scrollTop: '0px'
+					}, 200);
+				});
+				$('#code').hover(function() {
+					$(this).attr('id', 'code_hover');
+					$('#code_img').show();
+				}, function() {
+					$(this).attr('id', 'code');
+					$('#code_img').hide();
+				});
+				setInterval('AutoScroll("#noteScroll")', 5000);
+			});
+			$(window).scroll(function(e) {
+				b();
+			});
+				$('a').click(function(){
+					window.location.href = $(this).attr("data_href");
+				});
+		</script>
+
+</html>

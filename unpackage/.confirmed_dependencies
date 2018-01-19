@@ -1,0 +1,16 @@
+{
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "js/common/mui.min.js",
+      "js/common/jquery-1.11.1.min.js",
+      "css/mui.min.css",
+      "/init/css_js/mobile-icons.css",
+      "/init/css_js/mobile.min.css",
+      "/init/css_js/mobile.min.js",
+      "/init/css_js/jquery.min.js"
+    ],
+    "refer": [],
+    "priority": 0
+  }
+}

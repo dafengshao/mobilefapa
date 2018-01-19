@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+
+	<head>
+
+		<head>
+			<meta charset="utf-8">
+			<title>落霞小说网 - 严歌苓 芳华小说在线阅读</title>
+			<meta name="Description" content="落霞小说网（LuoXia.com），一个简约而不简单的小说在线阅读网站，通过领先的设计，友好地兼容电脑、平板、手机等各类终端，方便您随时随地享受美妙阅读时光。">
+			<!-- disable iPhone inital scale -->
+			<meta name="viewport" content="width=device-width,initial-scale=1.0">
+			<meta name="applicable-device" content="pc,mobile">
+			<meta name="renderer" content="webkit">
+			<meta http-equiv="Cache-Control" content="no-transform">
+			<link rel="shortcut icon" href="http://www.luoxia.com/favicon.ico">
+
+			<!-- main css -->
+			<link rel="stylesheet" href="http://www.luoxia.com/theme/style.css" type="text/css">
+			<!-- media queries css -->
+			<link rel="stylesheet" href="http://www.luoxia.com/theme/queries.css" type="text/css">
+
+			<!-- html5.js for IE less than 9 -->
+			<!--[if lt IE 9]>
+	<script src="http://7xky9t.com1.z0.glb.clouddn.com/html5.js"></script>
+<![endif]-->
+
+			<!-- css3-mediaqueries.js for IE less than 9 -->
+			<!--[if lt IE 9]>
+	<script src="http://7xky9t.com1.z0.glb.clouddn.com/css3-mediaqueries.js"></script>
+<![endif]-->
+			<!-- Include jQuery -->
+			<script src="http://7xky9t.com1.z0.glb.clouddn.com/jquery1.42.min.js"></script>
+			<!-- Include the Sidr JS -->
+			<script src="http://7xky9t.com1.z0.glb.clouddn.com/jquery.sidr.min.js"></script>
+			<script src="http://7xky9t.com1.z0.glb.clouddn.com/script.js"></script>
+			<script src="http://7xky9t.com1.z0.glb.clouddn.com/TouchSlide.1.1.js"></script>
+			<script src="http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=421021"></script>
+			<link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_style0_16.css?v=6aba13f0.css">
+			<link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_popup.css?v=240f357d.css">
+		</head>
+
+		<body id="bodyid" class="bgw" style="display: ;">
+		</body>
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+				var loadHTML = function(url) {
+					var URL = plus.android.importClass("java.net.URL");
+					var URLConnection = plus.android.importClass("java.net.URLConnection");
+					var BufferedReader = plus.android.importClass("java.io.BufferedReader");
+					var InputStreamReader = plus.android.importClass("java.io.InputStreamReader");
+					var StrictMode = plus.android.importClass("android.os.StrictMode");
+					var String = plus.android.importClass("java.lang.String");
+					//以下两句必加，不然会请求不了网络，原因：
+					//android3.0版本开始就强制程序不能在主线程中访问网络，要把访问网络放在独立的线程中。
+					//以下两句可以忽略这些强制策略。
+					var policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+					StrictMode.setThreadPolicy(policy);
+
+					var httpConn = new URL("http://www.luoxia.com/").openConnection();
+					// 设置通用属性
+					httpConn.setRequestProperty("Accept", "*/*");
+					httpConn.setRequestProperty("Content-Type", "text/html");
+					httpConn.setRequestProperty("Connection", "Keep-Alive");
+					//设置Cookie
+					//httpConn.setRequestProperty("Cookie", cookies);
+					httpConn.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)");
+					// 建立实际的连接
+					httpConn.connect();
+
+					//----------------获取输出 start----------------//
+					var reader = new BufferedReader(new InputStreamReader(httpConn.getInputStream(), "UTF-8"));
+					var lines = new String();
+					//输出数据
+					var response = "";
+					var start = false;
+					var end = false;
+					var start_js = false;
+					var end_js = true;
+					var i = 0;
+					while((lines = reader.readLine()) != null) {
+						lines = lines.replace("script","noscript");
+						response += lines;
+					}
+					reader.close();
+					console.log(response);
+					//document.getElementById("bodyid").innerHTML = response;
+					//----------------获取输出 end----------------//
+					//$response = $(response);
+					return response;
+				}
+//				document.getElementById("iframe_id").innerHTML = loadHTML("http://www.luoxia.com/");
+				//$(loadHTML("http://www.luoxia.com/")).find("body").appendTo("body");
+				//var htmlBody = $("#bodyid").html();
+				var sbody = $(loadHTML("http://www.luoxia.com/"));
+				console.log(writeObj(sbody) );
+				
+				
+				function writeObj(obj){ 
+				 var description = ""; 
+				 for(var i in obj){ 
+				 var property=obj[i]; 
+				 description+=i+" = "+property+"\n"; 
+				 } 
+				 return (description); 
+				} 
+			});
+			
+		function AutoScroll(obj) {
+			$(obj).find("ul:first").animate({
+				marginTop: "-1.5em"
+			}, 500, function () {
+				$(this).css({ marginTop: "0em" }).find("li:first").appendTo(this);
+			});
+		}
+			TouchSlide({ 
+					slideCell:"#slideBox",
+					titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+					mainCell:".bd ul", 
+					effect:"leftLoop", 
+					autoPage:true,//自动分页
+					autoPlay:true //自动播放
+				});
+				
+				window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+		
+		
+		
+		function b(){
+	h = $(window).height();
+	t = $(document).scrollTop();
+	if(t > h){
+		$('#gotop').show();
+	}else{
+		$('#gotop').hide();
+	}
+}
+$(document).ready(function(e) {
+	b();	
+	$('#gotop').click(function(){
+		//$(document).scrollTop(0);	
+		$('html,body').animate({scrollTop:'0px'}, 200);
+	});	
+	$('#code').hover(function(){
+		$(this).attr('id','code_hover');
+		$('#code_img').show();
+	},function(){
+		$(this).attr('id','code');
+		$('#code_img').hide();
+	});
+	setInterval('AutoScroll("#noteScroll")', 5000);
+});
+$(window).scroll(function(e){
+	b();		
+});
+		
+		</script>

@@ -1,0 +1,133 @@
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="RATING" content="RTA-5042-1996-1400-1577-RTA">
+		<title>
+			porn videos
+		</title>
+		<meta name="description" content="Fapality.com is the only place to be if you're a truly fan of quality porn. Only newest and finest fap material for any taste - daily updates of handpicked free HD porn videos.">
+		<link rel="canonical" href="https://fapality.com/">
+		<link href="./init/css_js/mobile-icons.css" rel="stylesheet" type="text/css">
+		<link href="./init/css_js/mobile.min.css" rel="stylesheet" type="text/css">
+		<link href="css/layui.css" rel="stylesheet" type="text/css">
+	
+	</head>
+
+	<body>
+		<header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+			<div class="menu_button">
+				<i class="icon-list"></i>
+			</div>
+			<div class="search_button" data-toggle="#search">
+				<i class="icon-search"></i>
+			</div>
+			<div class="logo" itemprop="headline">
+				<a href="/" title="Free Porn Videos"><span>FAP</span>ALITY</a>
+			</div>
+			<form action="/search/" id="search">
+				<div class="leftside"><input type="text" name="q" value="" placeholder="Search videos"></div>
+				<div class="rightside"><button class="button button-red button-fullscreen"><i class="icon-search"></i></button></div>
+			</form>
+			<div class="wrapper"></div>
+		</header>
+		<h1 class="page_title">Free Porn Videos Watched Right Now</h1>
+<div class="row masonry-row"><h1 class="page_title">Free Porn Videos Watched Right Now</h1><ul id= "item_ul" class="list_videos masonry"><!--category_tags-->
+</ul></div>
+<!--<iframe src="https://fapality.com/get_file/1/58149f4d707c2c3bda2c9bb522b75844/18000/18578/18578_480p.mp4/?br=855"></iframe>
+<video 
+	style=" visibility: visible;   width: 100%"
+	src="https://fapality.com/get_file/1/58149f4d707c2c3bda2c9bb522b75844/18000/18578/18578_480p.mp4/?br=855" class="fp-engine" autoplay="" preload="metadata" x-webkit-airplay="allow"></video>
+		--><script src="./init/css_js/jquery.min.js">
+		</script>
+		<script src="./init/css_js/mobile.min.js">
+		</script>
+		<script src="js/common/http_get.js">
+		</script>
+		<ul class="layui-fixbar" >
+		<li onclick="init();" class="layui-icon" lay-type="bar1" style="">↺</li>
+		<li onclick="document.documentElement.scrollTop = document.body.scrollTop =0;" class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;">⇑</li></ul>
+	</body>
+	<script type="text/javascript">
+		var rootpath = "https://fapality.com"
+		document.addEventListener('plusready',function(){
+			init();
+			$("body").on("click",".kt_imgrc", function() {
+				console.log($(this).attr("href_or"));
+				var movieUrl = httpGet($(this).attr("href_or"));
+				//var a = $(movie).find("video")
+				//console.log(movie);
+		   		play(movieUrl);
+		 	});
+		}
+			
+		);
+	var url = "https://fapality.com/?mode=async&function=get_block&block_id=list_videos_videos_watched_right_now&from=pageno&undefined";
+
+	var init = function() {
+			var newurl = url.replace("pageno",	Math.floor(Math.random()*100))
+			console.log(newurl);
+				var URL = plus.android.importClass("java.net.URL");
+				var URLConnection = plus.android.importClass("java.net.URLConnection");
+				var BufferedReader = plus.android.importClass("java.io.BufferedReader");
+				var InputStreamReader = plus.android.importClass("java.io.InputStreamReader");
+				var StrictMode = plus.android.importClass("android.os.StrictMode");
+				//以下两句必加，不然会请求不了网络，原因：
+				//android3.0版本开始就强制程序不能在主线程中访问网络，要把访问网络放在独立的线程中。
+				//以下两句可以忽略这些强制策略。
+				var policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+				StrictMode.setThreadPolicy(policy);
+				var httpConn = new URL(newurl).openConnection();
+				// 设置通用属性
+				httpConn.setRequestProperty("Accept", "*/*");
+				httpConn.setRequestProperty("Content-Type", "text/html");
+				httpConn.setRequestProperty("Connection", "Keep-Alive");
+				//设置Cookie
+				//httpConn.setRequestProperty("Cookie", cookies);
+				httpConn.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)");
+				// 建立实际的连接
+				httpConn.connect();
+
+				//----------------获取输出 start----------------//
+				var reader = new BufferedReader(new InputStreamReader(httpConn.getInputStream(), "UTF-8"));
+				var lines;
+				//输出数据
+				var response = "";
+				var startstr = "<!--category_tags-->";
+				var endstr = "</ul>";
+				while((lines = reader.readLine()) != null) {
+					lines = lines.replace(/240x180/g, "320x200");
+					lines = lines.replace(/onmouseover/g, "over");
+					lines = lines.replace(/onmouseout/g, "out");
+					lines = lines.replace(/href/g, "href_or");
+					response += lines;
+				}
+				reader.close();
+				var a = response.indexOf(startstr)+startstr.length;
+				var b = response.indexOf(endstr);
+				console.log(response.substring(response.length-100,b));
+				$("#item_ul").html(response.substring(a,b));
+				//$(response).appendTo("body");
+				/*var Intent = plus.android.importClass("android.content.Intent");
+                var Uri = plus.android.importClass("android.net.Uri");
+                var main = plus.android.runtimeMainActivity();
+                var intent = new Intent(Intent.ACTION_VIEW);
+                var uri = Uri.parse("https://fapality.com/get_file/1/58149f4d707c2c3bda2c9bb522b75844/18000/18578/18578_480p.mp4");
+                intent.setDataAndType(uri, "video/*");
+                main.startActivity(intent);*/
+			
+			}
+	var play = function(url){
+		var Intent = plus.android.importClass("android.content.Intent");
+        var Uri = plus.android.importClass("android.net.Uri");
+        var main = plus.android.runtimeMainActivity();
+        var intent = new Intent(Intent.ACTION_VIEW);
+        var uri = Uri.parse(url);
+        intent.setDataAndType(uri, "video/*");
+        main.startActivity(intent);
+	}
+	
+	</script>
+
+</html>
